@@ -1,7 +1,7 @@
 {
   "name": "sapper-webpack-now-ipfs",
-  "description": "TODO",
-  "version": "0.0.1",
+  "description": "A svelte sapper app built with webpack deployed to Vercel now running IPFS node in the browser.",
+  "version": "1.0.0",
   "scripts": {
     "start": "sapper dev",
     "dev": "sapper dev --port 3000",
@@ -27,6 +27,6 @@
   "optionalDependencies": {
     "fsevents": "^2.1.2"
   },
-  "repository": "https://github.com/DougAnderson444/piper",
+  "repository": "https://github.com/DougAnderson444/sapper-webpack-now-ipfs",
   "license": "MIT"
 }
