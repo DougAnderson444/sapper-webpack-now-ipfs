@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const config = require('sapper/config/webpack.js');
 const pkg = require('./package.json');
-
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
@@ -13,8 +12,16 @@ const mainFields = ['svelte', 'module', 'browser', 'main'];
 module.exports = {
 	client: {
 		entry: config.client.entry(),
+		resolve: { 			
+			alias: {
+				svelte: path.resolve('node_modules', 'svelte'),
+				fs: 'graceful-fs',
+				net: 'empty'
+			},
+			extensions: ['.mjs', '.js', '.svelte'],
+			mainFields: ['svelte', 'browser', 'module', 'main']
+		},
 		output: config.client.output(),
-		resolve: { alias, extensions, mainFields },
 		module: {
 			rules: [
 				{
@@ -73,5 +80,10 @@ module.exports = {
 		entry: config.serviceworker.entry(),
 		output: config.serviceworker.output(),
 		mode: process.env.NODE_ENV
-	}
+	},
+	node: {
+		fs: 'empty',
+		net: 'empty',
+		tls: 'empty'
+	  }
 };
