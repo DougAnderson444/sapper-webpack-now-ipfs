@@ -1,6 +1,6 @@
 # Why?
 
-I love svelte as it's so compact and easy. However, I couldn't get IPFS to work with Rollup, so I needed to stick to Webpack. I found it was pretty hard to get the right webpack config to get IPFS running. Once I found the rght magic formula, decided to save it here.
+I love [Svelte](https://svelte.dev/) as it's so compact and easy. However, I couldn't get IPFS to work with Rollup on [Sapper](https://sapper.svelte.dev/docs/), so I needed to stick to Webpack. I found it was pretty hard to get the right webpack config to get IPFS running. Once I found the rght magic formula, decided to save it here.
 
 Now you can benefit from it too!
 
