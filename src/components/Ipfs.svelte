@@ -20,7 +20,7 @@
   let password = ''
   let modifier = ''
   export let addedFileContents, ipfsAPI
-  export let ipfsApiId = 'TBD'
+  export let ipfsApiId = 'Loading...'
 
   const nodeConnect = async (apiMultiAddr) => {
     console.log('IpfsHttpClient(apiMultiAddr)', apiMultiAddr)
