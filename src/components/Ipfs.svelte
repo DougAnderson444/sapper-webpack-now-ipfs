@@ -19,14 +19,16 @@
 
   let password = ''
   let modifier = ''
-  let addedFileContents, ipfsAPI
+  export let addedFileContents, ipfsAPI
+  export let ipfsApiId = 'TBD'
 
   const nodeConnect = async (apiMultiAddr) => {
     console.log('IpfsHttpClient(apiMultiAddr)', apiMultiAddr)
     try {
       ipfsAPI = IpfsHttpClient(apiMultiAddr)
       const { id } = await ipfsAPI.id()
-      console.log(`ipfsAPI`, id)
+      ipfsApiId = id
+      console.log(`ipfsAPI`, ipfsApiId)
     } catch (error) {
       console.log(error)
     }
@@ -104,6 +106,8 @@
       </p>
       <p>Browser nodeID: {$nodeId}</p>
       <p>{addedFileContents}</p>
+      <h2>Let's connect to a remote IPFS server, too!</h2>
+      <p>{ipfsApiId}</p>
     </div>
   {:else}
     <div>
