@@ -27,7 +27,7 @@
     try {
       ipfsAPI = IpfsHttpClient(apiMultiAddr)
       const { id } = await ipfsAPI.id()
-      ipfsApiId = id
+      ipfsApiId = `Remote Node ID: ` + id
       console.log(`ipfsAPI`, ipfsApiId)
     } catch (error) {
       console.log(error)
